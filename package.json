@@ -1,0 +1,22 @@
+{
+  "name": "@d3vtool/mutex",
+  "version": "1.0.0",
+  "description": "This library allows you to use concept of mutex in asynchronous environment.",
+  "source": "src/index.ts",
+  "main": "dist/cjs/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run build:cjs",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Sudhanshu Kumar",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "esbuild": "^0.25.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
