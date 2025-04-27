@@ -7,8 +7,8 @@ export class Mutex {
     private queue: Queue<VoidFunction>;
     
     public constructor(){
-        this.queue = new Queue<VoidFunction>();
         this.isLocked = false;
+        this.queue = new Queue<VoidFunction>();
     }
 
     async acquire() {
