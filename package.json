@@ -10,7 +10,22 @@
     "build": "npm run build:cjs",
     "test": "vitest"
   },
-  "keywords": [],
+  "keywords": [
+    "mutex",
+    "async",
+    "asynchronous",
+    "concurrency",
+    "synchronization",
+    "mutex-lock",
+    "async-lock",
+    "concurrent-access",
+    "thread-safety",
+    "mutex-js",
+    "resource-lock",
+    "async-mutex",
+    "semaphore",
+    "js-mutex"
+  ],
   "author": "Sudhanshu Kumar",
   "license": "MIT",
   "devDependencies": {
