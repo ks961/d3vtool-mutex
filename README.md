@@ -20,7 +20,7 @@ yarn add @d3vtool/mutex
 
 ## Usage Example
 
-### Concurrent Async Data Fetching with Updates to a in memory Shared Resource
+### Concurrent Async Data Fetching with Updates to a in-memory Shared Resource
 
 ```ts
 import Mutex from '@d3vtool/mutex';
