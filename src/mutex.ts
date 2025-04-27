@@ -1,12 +1,13 @@
+import { Queue } from "./queue";
 
 type VoidFunction = () => void | Promise<void>;
 
 export class Mutex {
-    private queue: VoidFunction[];
+    private queue: Queue<VoidFunction>;
     private isLocked: boolean;
     
     public constructor(){
-        this.queue = [];
+        this.queue = new Queue<VoidFunction>();
         this.isLocked = false;
     }
 
@@ -17,7 +18,7 @@ export class Mutex {
                     this.isLocked = true;
                     resolve(() => this.unlock());
                 } else {
-                    this.queue.push(tryToAcquireLock);
+                    this.queue.enqueue(tryToAcquireLock);
                 }
             }
             tryToAcquireLock();
@@ -27,8 +28,8 @@ export class Mutex {
 
     async unlock() {
         this.isLocked = false;
-        if(this.queue.length > 0) {
-            const next = this.queue.shift() as Function;
+        if(!this.queue.isEmpty()) {
+            const next = this.queue.dequeue() as Function;
             await next();
         }
     }
