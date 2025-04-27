@@ -1,7 +1,7 @@
 {
   "name": "@d3vtool/mutex",
   "version": "1.0.1",
-  "description": "This library allows you to use concept of mutex in asynchronous environment.",
+  "description": "This library allows you to use concept of mutex for shared in memory resource in asynchronous environment.",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
   "types": "dist/types/index.d.ts",

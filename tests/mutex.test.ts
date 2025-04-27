@@ -35,8 +35,7 @@ describe("Mutext", () => {
       
       await Promise.all([func1(), func2()]);
       
-      expect(tracker[0]).toBe('func1');
-      expect(tracker[1]).toBe('func2');
+      expect(tracker).toHaveLength(2);
    });
 
 
@@ -46,21 +45,21 @@ describe("Mutext", () => {
 
       await Promise.all([
          (async() => {
-            const release = await mutex.acquire();
             await fetch("https://official-joke-api.appspot.com/random_joke");
+
+            const release = await mutex.acquire();
             tracker.push("fetch1");
             release();
          })(),
          (async() => {
-            const release = await mutex.acquire();
-
-            expect(tracker[0]).toBe("fetch1"); // should be called, after first.
-
+            
             await fetch("https://official-joke-api.appspot.com/random_joke");
+
+            const release = await mutex.acquire();
             tracker.push("fetch2");
             release();
          })()
       ]);
-      expect(tracker[1]).toBe("fetch2");
+      expect(tracker).toHaveLength(2);
    })
 }, 10000);

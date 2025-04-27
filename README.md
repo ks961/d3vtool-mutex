@@ -1,6 +1,6 @@
 # Mutex
 
-This library allows you to use concept of mutex in asynchronous environment.
+This library allows you to use concept of mutex for shared in memory resource in asynchronous environment.
 
 ## Installation
 
@@ -20,7 +20,7 @@ yarn add @d3vtool/mutex
 
 ## Usage Example
 
-### Concurrent Async Data Fetching with Sequential Updates to a Shared Resource
+### Concurrent Async Data Fetching with Updates to a in memory Shared Resource
 
 ```ts
 import Mutex from '@d3vtool/mutex';
@@ -30,20 +30,22 @@ const resource: any[] = [];
 
 await Promise.all([
   (async () => {
-    const release = await mutex.acquire();
-
     const res = await fetch("some-api-endpoint/");
     const data = await res.json();
+
+    const release = await mutex.acquire();
+
     resource.push({ source: "fetch1", data });
 
     release();
   })(),
 
   (async () => {
-    const release = await mutex.acquire();
-
     const res = await fetch("some-api-endpoint/");
     const data = await res.json();
+
+    const release = await mutex.acquire();
+
     resource.push({ source: "fetch2", data });
 
     release();
