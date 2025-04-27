@@ -1,6 +1,6 @@
 # Mutex
 
-This library allows you to use concept of mutex for shared in memory resource in asynchronous environment.
+This library allows you to use concept of mutex for shared in-memory resource in asynchronous environment.
 
 ## Installation
 
