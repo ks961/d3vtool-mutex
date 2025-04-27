@@ -3,8 +3,8 @@ import { Queue } from "./queue";
 type VoidFunction = () => void | Promise<void>;
 
 export class Mutex {
-    private queue: Queue<VoidFunction>;
     private isLocked: boolean;
+    private queue: Queue<VoidFunction>;
     
     public constructor(){
         this.queue = new Queue<VoidFunction>();
