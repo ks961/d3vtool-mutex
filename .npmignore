@@ -10,6 +10,7 @@ tsconfig.app.json
 tsconfig.node.json
 tsconfig.esm.json
 tsconfig.cjs.json
+tsconfig.json
 index.ts
 index.html
 package-lock.json
@@ -25,6 +26,6 @@ tests/
 __tests__/
 
 # Keep dist/ folder and other important files
-!lib/
+!dist/
 !README.md
 !LICENSE
