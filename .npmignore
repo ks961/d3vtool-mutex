@@ -16,6 +16,7 @@ index.html
 package-lock.json
 node_modules
 minify.js
+vite.config.ts
 
 # Ignore source code (optional, depending on your decision to publish source code)
 src/
